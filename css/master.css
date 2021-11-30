@@ -1,0 +1,104 @@
+/*
+ * master style
+ *
+ * Authors: AMA
+ *
+ * Date: nov 11 2021
+ *
+ */
+
+ .head{
+   font-family: monospace;
+   color: white;
+ }
+
+ .text_center{
+  text-align: center;
+ }
+
+ #head_h1 {
+   font-size: 40px;
+ }
+
+ #head_p {
+   font-size: 25px;
+ }
+
+#profile_body{
+  background-image: url(../image/blue_grade.jpg);
+  background-size: cover;
+}
+
+#index_body{
+  background-image: url(../image/neon_hall.jpg);
+  background-size: cover;
+}
+
+#multi_body{
+  background-image: url(../image/solid_black.jpg);
+  background-size: cover;
+}
+
+.itl_30{
+  font-size: 30px;
+  font-style: italic;
+}
+
+.link {
+font-size: 20px;
+color: white;
+font-family: monospace;
+}
+
+.link:hover {
+ background-color: red;
+ color: blue;
+
+}
+
+.profile_img {
+ /* position: absolute; */
+ top: 30;
+ left: 400;
+}
+
+.bio_h2 {
+  font-size: 30px;
+  color: white;
+}
+
+#link_h2 {
+  color: white;
+}
+
+#name {
+ font-size: 40px;
+ font-family: fantasy;
+ text-shadow: black;
+ color: white;
+}
+
+#bio_p {
+ font-size: 20px;
+ text-shadow: black;
+ color: white;
+}
+
+.times_table {
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+  width: auto;
+}
+
+td {
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+}
+
+th {
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+}

@@ -1,0 +1,40 @@
+/*
+store front style
+*/
+
+#head{
+  font-size: 40px;
+  font-family: monospace;
+}
+
+#user_pass{
+  font-size: 20px;
+  font-family: monospace;
+}
+
+#items{
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+#price{
+  font-size: 15px;
+  font-family: monospace;
+}
+
+#qty {
+  font-size: 20px;
+  font-family: monospace;
+}
+
+#footer {
+  font-size: 28px;
+  font-family: monospace;
+}
+
+#recipt {
+  font-size: 30px;
+  font-family: monospace;
+  color: white;
+}

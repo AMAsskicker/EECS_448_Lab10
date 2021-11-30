@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/storeFront.css">
+    <script src="./js/formChecker.js"></script>
+  </head>
+  <body>
+    <form action="./php/customerBackend.php" method="post" class="text_center" name="order_form" onsubmit="return validateForm()">
+      <p id="head">
+      Welcome to Spatula City's Online Store!<br>
+      Please make your selections below
+      </p>
+      <span id="user_pass">User Name (Email): </span><input type="text" name="user">
+      <br>
+      <span id="user_pass">Password: </span><input type="text" name="password">
+      <br>
+      <br>
+      <img src="./image/red_spatula.jpg" width="300" height="100"><br>
+      <span id="items">Red Spatula</span>
+      <br>
+      <br>
+      <span id="qty">Quantity (0-9) </span><input type="text" name="item1"><span id="price"> $7.99 EACH</span>
+      <br>
+      <br>
+      <br>
+      <img src="./image/blue_spatula.jpg" width="300" height="100"><br>
+      <span id="items">Blue Spatula</span>
+      <br>
+      <br>
+      <span id="qty">Quantity (0-9) </span><input type="text" name="item2"><span id="price">  $7.89 EACH</span>
+      <br>
+      <br>
+      <img src="./image/purple_spatula.jpg" width="300" height="100"><br>
+      <span id="items">Purple Spatula</span>
+      <br>
+      <br>
+      <span id="qty">Quantity (0-9) </span><input type="text" name="item3"><span id="price"> $6.99 EACH</span>
+      <br>
+      <br>
+      <img src="./image/white_spatula.jpg" width="200" height="200"><br>
+      <span id="items">White Spatula</span>
+      <br>
+      <br>
+      <span id="qty">Quantity (0-9) </span><input type="text" name="item4"><span id="price"> $8.99 EACH</span>
+      <br>
+      <br>
+      <img src="./image/black_spatula.jpg" width="200" height="200"><br>
+      <span id="items">Black Spatula</span>
+      <br>
+      <br>
+      <span id="qty">Quantity (0-9) </span><input type="text" name="item5"><span id="price"> $5.99 EACH</span>
+      <br>
+      <br>
+      <span id="items">Please choose the shipping</span>
+      <br>
+      <input type="radio" name="shipping" value="overnight"><span id="price">  Overnight $50</span>
+      <br>
+      <input type="radio" name="shipping" value="three"><span id="price">  Three Day $5</span>
+      <br>
+      <input type="radio" name="shipping" value="free"><span id="price">  Free 7 Day</span>
+      <br>
+      <br>
+      <input type="reset">
+      <input type="submit" name="submit" value="Submit Order">
+    </form>
+  </body>
+</html>
