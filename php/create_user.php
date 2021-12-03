@@ -23,9 +23,6 @@
       }
     }
   }
-  //not in use, create new row
-  // $add_query = "INSERT INTO Users (user_id) VALUES ('$new_user_name')";
-  // '" . $_POST['headline'] " . ', '" . $_POST['content'] . "'
   if ($can_create) {
     //not in use, create new row
     $add_result = mysqli_query($mysqli, "INSERT INTO Users(user_id) VALUES ('$new_user_name')");
@@ -37,11 +34,7 @@
   } else {
     echo "USER NAME ALREADY EXISTS";
   }
-
-
-
   //free results, close connection
   $result->free();
   $mysqli->close();
-
  ?>
