@@ -1,4 +1,8 @@
 <?php
+  // error reporting
+  error_reporting(E_ALL);
+  ini_set("display_errors", 1);
+
   //vars
   $can_create = true;
   $mysqli = new mysqli("mysql.eecs.ku.edu", "a682a575", "Xaisifi7", "a682a575");
@@ -20,22 +24,24 @@
     }
   }
   //not in use, create new row
-  // $add_row = "INSERT INTO Users (user_id) VALUES ('".$new_user_name."')";
+  // $add_query = "INSERT INTO Users (user_id) VALUES ('$new_user_name')";
   // '" . $_POST['headline'] " . ', '" . $_POST['content'] . "'
   if ($can_create) {
-    $add_result = mysqli_query($mysqli, "INSERT INTO Users(user_id) VALUES($new_user_name)");
+    //not in use, create new row
+    $add_result = mysqli_query($mysqli, "INSERT INTO Users(user_id) VALUES ('$new_user_name')");
     if ($add_result) {
       echo "New record created successfully";
     } else {
       echo "Error: NEW USER NOT CREATED";
     }
+  } else {
+    echo "USER NAME ALREADY EXISTS";
   }
 
 
 
   //free results, close connection
   $result->free();
-  $add_result->free();
   $mysqli->close();
 
  ?>
