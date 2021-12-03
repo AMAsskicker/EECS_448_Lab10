@@ -4,7 +4,7 @@
 
 
 function validateForm() {
-  let newUser = document.forms["new_user"]["password"].value;
+  let newUser = document.forms["new_user"]["userName"].value;
   //check password
   if (newUser == "") {
     alert("USER NAME must be filled out");
