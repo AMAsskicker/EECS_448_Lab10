@@ -45,7 +45,7 @@
   }
 //append to table
   if ($can_post) {
-    $add_post = mysqli_query($mysqli, "INSERT INTO POSTS(post_id, post_body, author_id) VALUES ('$post_id', '$post_message', '$post_author')");
+    $add_post = mysqli_query($mysqli, "INSERT INTO Posts(post_id, post_body, author_id) VALUES ('$post_id', '$post_message', '$post_author')");
     if ($add_post) {
       echo "POST MADE";
     } else {
