@@ -7,14 +7,76 @@
  *
  */
 
+/* CLASSES */
+
+.bio_h2 {
+  font-size: 30px;
+  color: white;
+}
+
  .head{
    font-family: monospace;
    color: white;
  }
 
+ .itl_30{
+   font-size: 30px;
+   font-style: italic;
+ }
+
+ .link {
+ font-size: 20px;
+ color: white;
+ font-family: monospace;
+ }
+
+ .link:hover {
+  background-color: red;
+  color: blue;
+
+ }
+
+ .profile_img {
+  /* position: absolute; */
+  top: 30;
+  left: 400;
+ }
+
  .text_center{
   text-align: center;
  }
+
+ .times_table {
+   text-align: center;
+   border: 1px solid white;
+   color: white;
+   width: auto;
+ }
+
+ .white_20_mono{
+   font-size: 20px;
+   font-family: monospace;
+   color: white;
+ }
+
+ /* ID'S */
+
+#admin_head{
+  font-size: 40px;
+  font-family: monospace;
+  color: white;
+}
+
+#bio_p {
+ font-size: 20px;
+ text-shadow: black;
+ color: white;
+}
+
+#black_body{
+  background-image: url(../image/solid_black.jpg);
+  background-size: cover;
+}
 
  #head_h1 {
    font-size: 40px;
@@ -24,75 +86,18 @@
    font-size: 25px;
  }
 
-#profile_body{
-  background-image: url(../image/blue_grade.jpg);
-  background-size: cover;
-}
-
 #index_body{
   background-image: url(../image/neon_hall.jpg);
   background-size: cover;
 }
 
+#link_h2 {
+  color: white;
+}
+
 #multi_body{
   background-image: url(../image/solid_black.jpg);
   background-size: cover;
-}
-
-#view_posts{
-  font-family: monospace;
-  font-size: 20px;
-  color: white;
-}
-
-#admin_head{
-  font-size: 40px;
-  font-family: monospace;
-  color: white;
-}
-
-#user_name{
-  font-size: 20px;
-  font-family: monospace;
-  color: white;
-}
-
-#new_post{
-  font-size: 20px;
-  font-family: monospace;
-  color: white;
-}
-
-.itl_30{
-  font-size: 30px;
-  font-style: italic;
-}
-
-.link {
-font-size: 20px;
-color: white;
-font-family: monospace;
-}
-
-.link:hover {
- background-color: red;
- color: blue;
-
-}
-
-.profile_img {
- /* position: absolute; */
- top: 30;
- left: 400;
-}
-
-.bio_h2 {
-  font-size: 30px;
-  color: white;
-}
-
-#link_h2 {
-  color: white;
 }
 
 #name {
@@ -102,18 +107,30 @@ font-family: monospace;
  color: white;
 }
 
-#bio_p {
- font-size: 20px;
- text-shadow: black;
- color: white;
+#new_post{
+  font-size: 20px;
+  font-family: monospace;
+  color: white;
 }
 
-.times_table {
-  text-align: center;
-  border: 1px solid white;
-  color: white;
-  width: auto;
+#profile_body{
+  background-image: url(../image/blue_grade.jpg);
+  background-size: cover;
 }
+
+#user_name{
+  font-size: 20px;
+  font-family: monospace;
+  color: white;
+}
+
+#view_posts{
+  font-family: monospace;
+  font-size: 20px;
+  color: white;
+}
+
+/* TAGS */
 
 td {
   text-align: center;
