@@ -38,13 +38,13 @@
       echo '<span class="white_20_mono">New record created successfully</span>';
     } else {
       echo '<span class="white_20_mono">ERROR: NEW USER NOT CREATED</span>';
-      // return new user
-      echo '<div class="retun_home text_center">';
-      echo '<a href="https://people.eecs.ku.edu/~a682a575/html/create_user.html" class="link">RETURN TO NEW USER</a>';
-      echo '</div>';
     }
   } else {
     echo '<span class="white_20_mono">USER NAME ALREADY EXISTS</span>';
+    // return new user
+    echo '<div class="retun_home text_center">';
+    echo '<a href="https://people.eecs.ku.edu/~a682a575/html/create_user.html" class="link">RETURN TO NEW USER</a>';
+    echo '</div>';
   }
   //free results, close connection
   $result->free();
