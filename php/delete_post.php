@@ -35,10 +35,10 @@
       $auth_string = $auth_row["author_id"];
       $del_result = mysqli_query($mysqli, "DELETE FROM Posts WHERE post_id='$delete_id'");
       if ($del_result) {
-        echo '<span class="white_20_mono">DELETED POST ID: '. $delete_id .' BY: '. $post_auth .'</span><br>';
+        echo '<span class="white_20_mono">DELETED POST ID: '. $delete_id .' BY: '. $auth_string .'</span><br>';
         // echo '<span class="white_20_mono">DELETED POST ID: '. $delete_id .'</span><br>';
       } else {
-        echo '<span class="white_20_mono">ERROR DELETING POST ID: '. $delete_id .' BY: '. $post_auth .'</span><br>';
+        echo '<span class="white_20_mono">ERROR DELETING POST ID: '. $delete_id .' BY: '. $auth_string .'</span><br>';
         // echo '<span class="white_20_mono">ERROR DELETING POST ID: '. $delete_id .'</span><br>';
       }
       // release
