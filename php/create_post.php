@@ -72,7 +72,7 @@
   echo '<div class="retun_home text_center">';
   echo '<a href="https://people.eecs.ku.edu/~a682a575/" class="link">RETURN TO HOMEPAGE</a>';
   echo '<br>';
-  echo '<a href="https://people.eecs.ku.edu/~a682a575/html/create_post.html" class="MAKE ANOTHER POST</a>';
+  echo '<a href="https://people.eecs.ku.edu/~a682a575/html/create_post.html" class="link">MAKE ANOTHER POST</a>';
   echo '</div>';
   // html foot
   echo '</body>';
