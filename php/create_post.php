@@ -24,7 +24,6 @@
     while ($user_row = $user_result->fetch_assoc()) {
       if ($user_row["user_id"] == $post_author) {
         $can_post = true;
-        $user_result->free();
       }
     }
   }
@@ -41,7 +40,6 @@
           goto RESTART;
         }
       }
-      $id_result->free();
       $post_id_valid = true;
     }
   }
@@ -49,7 +47,7 @@
   echo '<html lang="en" dir="ltr">';
   echo '<head>';
   echo '<meta charset="utf-8">';
-  echo '<link rel="stylesheet" href="./css/master.css">';
+  echo '<link rel="stylesheet" href="../css/master.css">';
   echo '<title>View Posts</title>';
   echo '</head>';
   echo '<body class="text_center" id="black_body">';

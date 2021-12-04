@@ -21,7 +21,7 @@
     echo '<html lang="en" dir="ltr">';
     echo '<head>';
     echo '<meta charset="utf-8">';
-    echo '<link rel="stylesheet" href="./css/master.css">';
+    echo '<link rel="stylesheet" href="../css/master.css">';
     echo '<title>View Posts</title>';
     echo '</head>';
     echo '<body class="text_center" id="black_body">';
@@ -30,16 +30,16 @@
     foreach ($posts_2_delete as $delete_id) {
       //grab post auth
       // $auth_query = "SELECT author_id FROM Posts WHERE post_id='$delete_id'";
-      // $post_auth = mysqli_query($mysqli, "SELECT * FROM Posts WHERE post_id='$delete_id'");
-      // $auth_row = $post_auth->fetch_assoc();
-      // $auth_string = $auth_row["author_id"];
+      $post_auth = mysqli_query($mysqli, "SELECT * FROM Posts WHERE post_id='$delete_id'");
+      $auth_row = $post_auth->fetch_assoc();
+      $auth_string = $auth_row["author_id"];
       $del_result = mysqli_query($mysqli, "DELETE FROM Posts WHERE post_id='$delete_id'");
       if ($del_result) {
-        // echo '<span class="white_20_mono">DELETED POST ID: '. $delete_id .' BY: '. $post_auth .'</span><br>';
-        echo '<span class="white_20_mono">DELETED POST ID: '. $delete_id .'</span><br>';
+        echo '<span class="white_20_mono">DELETED POST ID: '. $delete_id .' BY: '. $post_auth .'</span><br>';
+        // echo '<span class="white_20_mono">DELETED POST ID: '. $delete_id .'</span><br>';
       } else {
-        // echo '<span class="white_20_mono">ERROR DELETING POST ID: '. $delete_id .' BY: '. $post_auth .'</span><br>';
-        echo '<span class="white_20_mono">ERROR DELETING POST ID: '. $delete_id .'</span><br>';
+        echo '<span class="white_20_mono">ERROR DELETING POST ID: '. $delete_id .' BY: '. $post_auth .'</span><br>';
+        // echo '<span class="white_20_mono">ERROR DELETING POST ID: '. $delete_id .'</span><br>';
       }
       // release
       $post_auth->free();
