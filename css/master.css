@@ -36,6 +36,18 @@
 
  }
 
+ .post_auth{
+
+ }
+
+ .post_message{
+   width: 75%;
+ }
+
+ .post_table_head{
+
+ }
+
  .profile_img {
   /* position: absolute; */
   top: 30;

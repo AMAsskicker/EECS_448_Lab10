@@ -22,13 +22,6 @@
       printf ("%s (%s)\n", $row["user_id"]);
       echo '<tr><td>'. $row["user_id"] .'</td></tr>';
     }
-
-
-
-
-
-
-
 /* free result set */
     $result->free();
   }

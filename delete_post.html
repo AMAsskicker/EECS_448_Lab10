@@ -6,7 +6,7 @@
     <title>View Posts</title>
   </head>
   <body id="black_body">
-    <form class="" action="index.html" method="post">
+    <form class="" action="./php/delete_post.php" method="post">
       <table>
 
     <?php
@@ -22,23 +22,26 @@
         }
       $query = "SELECT * FROM Posts";
       if ($post_results = $mysqli->query($query)) {
-        echo '<tr>';
+        echo '<thead><tr>';
         echo '<th>Delete</th>';
-        echo '<th>Post</th>';
+        echo '<th class="post_message">Post</th>';
         echo '<th>Post Author</th>';
-        echo '</tr>';
+        echo '</tr></thead>';
+        echo '<tbody>';
         while ($row = $post_results->fetch_assoc()) {
           $temp_id = $row["post_id"];
           echo '<tr>';
-          echo '<input type="checkbox" name="'. $temp_id .'" value="'. $temp_id .'"/>';
+          echo '<td><input type="checkbox" name="to_delete" value="'. $temp_id .'"/></td>';
           echo '<td>'. $row["post_body"] .'</td>';
           echo '<td>'. $row["author_id"] .'</td>';
           echo '</tr>';
         }
+        $post_results->free();
       }
-      // $post_results->free();
+      //cleanup
       $mysqli->close();
     ?>
+    </tbody>
     </table>
     <br>
     <input type="submit" name="execute" value="DELETE">
