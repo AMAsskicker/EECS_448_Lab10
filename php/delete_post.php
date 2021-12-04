@@ -14,20 +14,30 @@
     exit();
   }
   //get posts to delete
-  $posts_2_delete = $_POST["to_delete"];
+  $posts_2_delete = $_GET["to_delete"];
+  //html head
+  echo '<html lang="en" dir="ltr">';
+  echo '<head>';
+  echo '<meta charset="utf-8">';
+  echo '<link rel="stylesheet" href="./css/master.css">';
+  echo '<title>View Posts</title>';
+  echo '</head>';
+  echo '<body id="black_body">';
+  echo '<div class="text_center">';
+
   //itterate through delete posts
   foreach ($posts_2_delete as $delete_id) {
     $del_result = mysqli_query($mysqli, "DELETE FROM Posts WHERE post_id='$delete_id'");
     if ($del_result) {
-      echo '<span>DELETED POST ID: '. $delete_id .'</span><br>';
+      echo '<span class="white_20_mono">DELETED POST ID: '. $delete_id .'</span><br>';
     } else {
-      echo '<span>ERROR DELETING POST ID: '. $delete_id .'</span><br>';
+      echo '<span class="white_20_mono>ERROR DELETING POST ID: '. $delete_id .'</span><br>';
     }
   }
-
-
   // cleanup
   $mysqli->close();
-
-
+  //html foot
+  echo '</div>';
+  echo '</body>';
+  echo '</html>';
  ?>

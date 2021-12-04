@@ -6,7 +6,7 @@
     <title>View Posts</title>
   </head>
   <body id="black_body">
-    <form class="" action="./php/delete_post.php" method="post">
+    <form class="" action="./php/delete_post.php" method="get">
       <table>
 
     <?php
@@ -31,7 +31,7 @@
         while ($row = $post_results->fetch_assoc()) {
           $temp_id = $row["post_id"];
           echo '<tr>';
-          echo '<td><input type="checkbox" name="to_delete" value="'. $temp_id .'"/></td>';
+          echo '<td><input type="checkbox" name="to_delete[]" value="'. $temp_id .'"/></td>';
           echo '<td>'. $row["post_body"] .'</td>';
           echo '<td>'. $row["author_id"] .'</td>';
           echo '</tr>';
