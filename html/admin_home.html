@@ -14,7 +14,28 @@
       <span class="text_center" id="view_posts">View User</span>
       <select class="text_center" name="user_select">
         <option selected id+"">+</option>
-        <?php include '../php/build_user_select.php'; ?>
+        <?php
+          // error reporting
+          error_reporting(E_ALL);
+          ini_set("display_errors", 1);
+
+          $mysqli =  new mysqli("mysql.eecs.ku.edu", "a682a575", "Xaisifi7", "a682a575");
+          /* check connection */
+            if ($mysqli->connect_errno) {
+              printf("Connect failed: %s\n", $mysqli->connect_error);
+              exit();
+            }
+          $query = "SELECT * FROM Users";
+          if ($results = $mysqli->query($query)) {
+            while ($row = $results->fetch_assoc()) {
+              $temp_id = $row["post_id"];
+              echo '<option>'. $row["user_id"] .'</option>';
+            }
+            $results->free();
+          }
+          //cleanup
+          $mysqli->close();
+        ?>
       </select>
       <span class="text_center" id="view_posts"> Posts</span>
       <br>
