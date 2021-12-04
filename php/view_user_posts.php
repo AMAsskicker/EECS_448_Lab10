@@ -15,26 +15,29 @@
     echo '<link rel="stylesheet" href="../css/master.css">';
     echo "</head>";
     echo '<body id="multi_body">';
-    /* make table */
-    echo '<table class="times_table">';
-    echo '<tr><th class="post_auth">User ID</th>';
-    echo '<th class="post_message">Post</th>';
-    echo '</tr>';
-
-    /* fetch associative array */
-    while ($row = $result->fetch_assoc()) {
-      echo '<tr>';
-      echo '<td>'. $row["author_id"] .'</td>';
-      echo '<td>'. $row["post_body"] .'</td>';
+    if (!empty($result)) {
+      /* make table */
+      echo '<table class="times_table">';
+      echo '<tr><th class="post_auth">User ID</th>';
+      echo '<th class="post_message">Post</th>';
       echo '</tr>';
+      /* fetch associative array */
+      while ($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td>'. $row["author_id"] .'</td>';
+        echo '<td>'. $row["post_body"] .'</td>';
+        echo '</tr>';
+      }
+      // close table
+      echo "</table>";
+    } else {
+      echo '<span class="white_20_mono">This user has no posts</span>';
     }
 /* free result set */
     $result->free();
   }
 /* close connection */
   $mysqli->close();
-  // close table
-  echo "</table>";
   //link to admin home,
   echo '<div class="retun_home text_center">';
   echo '<a href="https://people.eecs.ku.edu/~a682a575/html/admin_home.html" class="link">RETURN TO ADMIN HOMEPAGE</a>';
