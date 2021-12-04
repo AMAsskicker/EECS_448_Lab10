@@ -23,6 +23,14 @@
       }
     }
   }
+// html head
+  echo '<html lang="en" dir="ltr">';
+  echo '<head>';
+  echo '<meta charset="utf-8">';
+  echo '<link rel="stylesheet" href="../css/master.css">';
+  echo '<title>New Posts Result</title>';
+  echo '</head>';
+  echo '<body class="text_center" id="black_body">';
   if ($can_create) {
     //not in use, create new row
     $add_result = mysqli_query($mysqli, "INSERT INTO Users(user_id) VALUES ('$new_user_name')");
@@ -41,4 +49,7 @@
   echo '<div class="retun_home text_center">';
   echo '<a href="https://people.eecs.ku.edu/~a682a575/" class="link">RETURN TO HOMEPAGE</a>';
   echo '</div>';
+  // html foot
+  echo '</body>';
+  echo '</html>';
  ?>
