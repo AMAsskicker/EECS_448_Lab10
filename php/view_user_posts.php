@@ -20,20 +20,20 @@
     echo '<tr><th class="post_auth">User ID</th>';
     echo '<th class="post_message">Post</th>';
     echo '</tr>';
-    echo '<tr>';
+
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
+      echo '<tr>';
       echo '<td>'. $row["author_id"] .'</td>';
       echo '<td>'. $row["post_body"] .'</td>';
+      echo '</tr>';
     }
 /* free result set */
     $result->free();
   }
 /* close connection */
   $mysqli->close();
-
   // close table
-  echo '</tr>';
   echo "</table>";
   //link to admin home,
   echo '<div class="retun_home text_center">';
