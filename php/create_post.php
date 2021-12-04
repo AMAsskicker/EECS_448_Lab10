@@ -48,7 +48,7 @@
   echo '<head>';
   echo '<meta charset="utf-8">';
   echo '<link rel="stylesheet" href="../css/master.css">';
-  echo '<title>View Posts</title>';
+  echo '<title>New Posts Result</title>';
   echo '</head>';
   echo '<body class="text_center" id="black_body">';
 //append to table
