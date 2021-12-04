@@ -17,7 +17,7 @@
     echo '<body id="multi_body">';
     if ($result->num_rows != 0) {
       /* make table */
-      echo '<table class="times_table">';
+      echo '<table class="times_table" style="font-family: monospace; color: white; font-size: 20px;">';
       echo '<tr><th class="post_auth">User ID</th>';
       echo '<th class="post_message">Post</th>';
       echo '</tr>';
