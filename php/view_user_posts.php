@@ -15,7 +15,7 @@
     echo '<link rel="stylesheet" href="../css/master.css">';
     echo "</head>";
     echo '<body id="multi_body">';
-    if (!mysql_num_rows($result)) {
+    if (mysql_num_rows($result) != 0) {
       /* make table */
       echo '<table class="times_table">';
       echo '<tr><th class="post_auth">User ID</th>';
@@ -31,7 +31,9 @@
       // close table
       echo "</table>";
     } else {
+      echo '<div class="text_center">';
       echo '<span class="white_20_mono">This user has no posts</span>';
+      echo '</div>';
     }
 /* free result set */
     $result->free();
