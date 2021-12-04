@@ -15,7 +15,7 @@
     echo '<link rel="stylesheet" href="../css/master.css">';
     echo "</head>";
     echo '<body id="multi_body">';
-    if (mysql_num_rows($result) != 0) {
+    if ($result->num_rows != 0) {
       /* make table */
       echo '<table class="times_table">';
       echo '<tr><th class="post_auth">User ID</th>';
