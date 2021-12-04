@@ -35,12 +35,12 @@
     //not in use, create new row
     $add_result = mysqli_query($mysqli, "INSERT INTO Users(user_id) VALUES ('$new_user_name')");
     if ($add_result) {
-      echo "New record created successfully";
+      echo '<span class="white_20_mono">New record created successfully</span>';
     } else {
-      echo "Error: NEW USER NOT CREATED";
+      echo '<span class="white_20_mono">ERROR: NEW USER NOT CREATED</span>';
     }
   } else {
-    echo "USER NAME ALREADY EXISTS";
+    echo '<span class="white_20_mono">USER NAME ALREADY EXISTS</span>';
   }
   //free results, close connection
   $result->free();
