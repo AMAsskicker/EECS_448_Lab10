@@ -2,9 +2,36 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>View Posts</title>
   </head>
-  <body>
-<!-- run php here -->
+  <body id="black_body">
+    <form class="" action="index.html" method="post">
+
+
+    <?php
+      $mysqli =  new mysqli("mysql.eecs.ku.edu", "a682a575", "Xaisifi7", "a682a575");
+      $query = "SELECT post_id, post_message, author_id FROM Posts";
+    ?>
+    <table>
+      <tr>
+        <th>Post</th>
+        <td>Post Author</td>
+      </tr>
+      <?php
+        if ($post_results = $mysqli->query($query)) {
+          while ($row = $post_results->fetch_assoc()) {
+      ?>
+      <tr>
+        <td><?php echo $row["post_body"]; ?></td>
+        <td><?php echo $row["author_id"]; ?></td>
+        <?php
+        echo '<input type="checkbox" name=".$row["post_id"]." value=".$row["post_id"].">';
+        ?>
+      </tr>
+      <?php
+        }
+      ?>
+    </table>
+    </form>
   </body>
 </html>
