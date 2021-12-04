@@ -15,7 +15,7 @@
     echo "</head>";
     echo '<body id="multi_body">';
     /* make table */
-    echo '<table class="times_table">';
+    echo '<table class="times_table" style="font-family: monospace; color: white; font-size: 20px;">';
     echo "<tr><th>USER ID</th></tr>";
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
