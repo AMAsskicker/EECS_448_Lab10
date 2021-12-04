@@ -11,33 +11,34 @@
       <a href="../php/view_users.php" class="link">View Users</a>
       <br>
       <br>
-      <span class="text_center" id="view_posts">View User</span>
-      <select class="text_center" name="user_select">
-        <option selected id+"">+</option>
-        <?php
-          // error reporting
-          error_reporting(E_ALL);
-          ini_set("display_errors", 1);
+      <form class="" action="../php/view_user_posts.php" method="post">
+        <span class="text_center" id="view_posts">Select User:</span>
+        <select class="text_center" name="user_select">
+          <?php
+            // error reporting
+            error_reporting(E_ALL);
+            ini_set("display_errors", 1);
 
-          $mysqli =  new mysqli("mysql.eecs.ku.edu", "a682a575", "Xaisifi7", "a682a575");
-          /* check connection */
-            if ($mysqli->connect_errno) {
-              printf("Connect failed: %s\n", $mysqli->connect_error);
-              exit();
+            $mysqli =  new mysqli("mysql.eecs.ku.edu", "a682a575", "Xaisifi7", "a682a575");
+            /* check connection */
+              if ($mysqli->connect_errno) {
+                printf("Connect failed: %s\n", $mysqli->connect_error);
+                exit();
+              }
+            $query = "SELECT * FROM Users";
+            if ($results = $mysqli->query($query)) {
+              while ($row = $results->fetch_assoc()) {
+                $temp_id = $row["post_id"];
+                echo '<option>'. $row["user_id"] .'</option>';
+              }
+              $results->free();
             }
-          $query = "SELECT * FROM Users";
-          if ($results = $mysqli->query($query)) {
-            while ($row = $results->fetch_assoc()) {
-              $temp_id = $row["post_id"];
-              echo '<option>'. $row["user_id"] .'</option>';
-            }
-            $results->free();
-          }
-          //cleanup
-          $mysqli->close();
-        ?>
-      </select>
-      <span class="text_center" id="view_posts"> Posts</span>
+            //cleanup
+            $mysqli->close();
+          ?>
+        </select>
+        <input type="submit" name="view_posts" value="View">
+      </form>
       <br>
       <br>
       <a href="delete_post.html" class="link">Delete Users Post</a>
