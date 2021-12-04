@@ -24,6 +24,7 @@
     while ($user_row = $user_result->fetch_assoc()) {
       if ($user_row["user_id"] == $post_author) {
         $can_post = true;
+        $user_result->free();
       }
     }
   }
@@ -40,24 +41,38 @@
           goto RESTART;
         }
       }
+      $id_result->free();
       $post_id_valid = true;
     }
   }
+  // html head
+  echo '<html lang="en" dir="ltr">';
+  echo '<head>';
+  echo '<meta charset="utf-8">';
+  echo '<link rel="stylesheet" href="./css/master.css">';
+  echo '<title>View Posts</title>';
+  echo '</head>';
+  echo '<body class="text_center" id="black_body">';
 //append to table
   if ($can_post) {
     $add_post = mysqli_query($mysqli, "INSERT INTO Posts(post_id, post_body, author_id) VALUES ('$post_id', '$post_message', '$post_author')");
+
     if ($add_post) {
-      echo "POST MADE";
+      echo '<span class="white_20_mono">POST MADE</span>';
     } else {
-      echo "POST FAILED";
+      echo '<span class="white_20_mono">POST FAILED</span>';
     }
   } else {
-    echo "NOT A REGISTERED USER";
+    echo '<span class="white_20_mono">NOT A REGISTERED USER</span>';
   }
 
   //CLEANUP
   $user_result->free();
   $id_result->free();
   $mysqli->close();
+  // html foot
+  //html foot
+  echo '</body>';
+  echo '</html>';
 
  ?>
