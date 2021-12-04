@@ -36,16 +36,13 @@
 
  }
 
- .post_auth{
-
- }
-
  .post_message{
-   width: 75%;
+   width: 65%;
  }
 
- .post_table_head{
-
+ .post_table{
+   font-family: monospace;
+   color: white;
  }
 
  .profile_img {

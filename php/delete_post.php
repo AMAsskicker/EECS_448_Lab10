@@ -24,8 +24,8 @@
     echo '<link rel="stylesheet" href="./css/master.css">';
     echo '<title>View Posts</title>';
     echo '</head>';
-    echo '<body id="black_body">';
-    echo '<div class="text_center">';
+    echo '<body class="text_center" id="black_body">';
+    echo '<div>';
 
     //itterate through delete posts
     foreach ($posts_2_delete as $delete_id) {
