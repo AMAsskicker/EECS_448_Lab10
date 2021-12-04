@@ -2,18 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="../css/master.css">
     <title>Admin Home</title>
   </head>
   <body id="multi_body">
     <div class="text_center" id="admin_links">
       <h1 class="text_center" id="admin_head">ADMIN HOMEPAGE</h1>
-      <a href="./php/view_users.php" class="link">View Users</a>
+      <a href="../php/view_users.php" class="link">View Users</a>
       <br>
       <br>
       <span class="text_center" id="view_posts">View User</span>
       <select class="text_center" name="user_select">
-
+        <?php include '../php/build_user_select.php'; ?>
 
       </select>
       <span class="text_center" id="view_posts"> Posts</span>
