@@ -17,7 +17,7 @@
     echo '<body id="multi_body">';
     /* make table */
     echo '<table class="times_table">';
-    echo "<tr><th>User ID</th></tr>";
+    echo "<tr><th class="post_auth">User ID</th>";
     echo '<th class="post_message">Post</th>';
     echo '</tr>';
     echo '<tr>';
