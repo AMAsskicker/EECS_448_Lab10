@@ -37,4 +37,8 @@
   //free results, close connection
   $result->free();
   $mysqli->close();
+// return home link
+  echo '<div class="retun_home text_center">';
+  echo '<a href="https://people.eecs.ku.edu/~a682a575/" class="link">RETURN TO HOMEPAGE</a>';
+  echo '</div>';
  ?>

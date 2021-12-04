@@ -46,6 +46,10 @@
     }
     // cleanup
     $mysqli->close();
+    //link to admin home
+    echo '<div class="retun_home text_center">';
+    echo '<a href="https://people.eecs.ku.edu/~a682a575/html/admin_home.html" class="link">RETURN TO ADMIN HOMEPAGE</a>';
+    echo '</div>';
     //html foot
     echo '</body>';
     echo '</html>';
