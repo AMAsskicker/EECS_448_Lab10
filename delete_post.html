@@ -2,36 +2,46 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/master.css">
     <title>View Posts</title>
   </head>
   <body id="black_body">
     <form class="" action="index.html" method="post">
-
+      <table>
 
     <?php
+      // error reporting
+      error_reporting(E_ALL);
+      ini_set("display_errors", 1);
+
       $mysqli =  new mysqli("mysql.eecs.ku.edu", "a682a575", "Xaisifi7", "a682a575");
-      $query = "SELECT post_id, post_message, author_id FROM Posts";
-    ?>
-    <table>
-      <tr>
-        <th>Post</th>
-        <td>Post Author</td>
-      </tr>
-      <?php
-        if ($post_results = $mysqli->query($query)) {
-          while ($row = $post_results->fetch_assoc()) {
-      ?>
-      <tr>
-        <td><?php echo $row["post_body"]; ?></td>
-        <td><?php echo $row["author_id"]; ?></td>
-        <?php
-        echo '<input type="checkbox" name=".$row["post_id"]." value=".$row["post_id"].">';
-        ?>
-      </tr>
-      <?php
+      /* check connection */
+        if ($mysqli->connect_errno) {
+          printf("Connect failed: %s\n", $mysqli->connect_error);
+          exit();
         }
-      ?>
+      $query = "SELECT * FROM Posts";
+      if ($post_results = $mysqli->query($query)) {
+        echo '<tr>';
+        echo '<th>Delete</th>';
+        echo '<th>Post</th>';
+        echo '<th>Post Author</th>';
+        echo '</tr>';
+        while ($row = $post_results->fetch_assoc()) {
+          $temp_id = $row["post_id"];
+          echo '<tr>';
+          echo '<input type="checkbox" name="'. $temp_id .'" value="'. $temp_id .'"/>';
+          echo '<td>'. $row["post_body"] .'</td>';
+          echo '<td>'. $row["author_id"] .'</td>';
+          echo '</tr>';
+        }
+      }
+      // $post_results->free();
+      $mysqli->close();
+    ?>
     </table>
+    <br>
+    <input type="submit" name="execute" value="DELETE">
     </form>
   </body>
 </html>
